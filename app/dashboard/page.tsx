@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import {
+	Button,
+	Card,
+	CardBody,
+	CardFooter,
+	CardHeader,
+} from "@nextui-org/react";
 
 import { databases } from "@/config/appwrite";
 
@@ -20,19 +26,18 @@ const HomePage = () => {
 			try {
 				const response = await databases.listDocuments(
 					process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID as string,
-					process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID as string
+					process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID as string,
 				);
 
 				const projects = response.documents.map((doc: any) => ({
 					$id: doc.$id,
 					name: doc.name,
 					description: doc.description,
-					githubUrl: doc.githubUrl
+					githubUrl: doc.githubUrl,
 				}));
 
 				setProjects(projects);
-			} catch (error) {
-			}
+			} catch (error) {}
 		};
 
 		fetchProjects();
