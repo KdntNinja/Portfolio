@@ -7,6 +7,7 @@ const routes = {
 	dashboard: "/dashboard",
 	profile: "/profile",
 	settings: "/settings",
+	admin: "/admin",
 };
 
 export const siteConfig = {
@@ -29,16 +30,16 @@ export const siteConfig = {
 	],
 	features: [
 		{
-			label: "/config/site.ts",
-			description: "/config/site.ts",
+			label: "Better",
+			description: "Just Better",
 		},
 		{
-			label: "/config/site.ts",
-			description: "/config/site.ts",
+			label: "Better than Max",
+			description: "Just Better",
 		},
 		{
-			label: "/config/site.ts",
-			description: "/config/site.ts",
+			label: "Betterer",
+			description: "Just Betterer",
 		},
 	],
 };
