@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1904dae8-edf9-478e-806d-cc0253367ba5" name="Changes" comment="Prod Commit 1">
-      <change beforePath="$PROJECT_DIR$/app/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +34,9 @@
     &quot;accountId&quot;: &quot;6d6998bb-5e95-495c-9d71-2d17fa6af07a&quot;
   }
 }</component>
+  <component name="MaliciousPackageCheckinHandlerState">
+    <option name="packageCheck" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -89,7 +92,7 @@
       <workItem from="1727895327276" duration="621000" />
       <workItem from="1727896167029" duration="22000" />
       <workItem from="1727896190039" duration="6000" />
-      <workItem from="1727896222318" duration="2323000" />
+      <workItem from="1727896222318" duration="2676000" />
     </task>
     <task id="LOCAL-00001" summary="Prod Commit 1">
       <option name="closed" value="true" />
@@ -123,14 +126,38 @@
       <option name="project" value="LOCAL" />
       <updated>1727898545051</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Prod Commit 1">
+      <option name="closed" value="true" />
+      <created>1727898588770</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727898588770</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Prod Commit 1">
+      <option name="closed" value="true" />
+      <created>1727898898507</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727898898507</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Prod Commit 1" />
     <option name="LAST_COMMIT_MESSAGE" value="Prod Commit 1" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
