@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { Button, Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 
 import { databases } from "@/config/appwrite";
 
@@ -42,13 +43,19 @@ const HomePage = () => {
 			<h1 className="text-center text-[25px] font-bold mb-6">Projects</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-3/4">
 				{projects.map((project) => (
-					<div key={project.$id} className="project-card border p-4 rounded">
-						<h3 className="text-xl font-bold">{project.name}</h3>
-						<p>{project.description}</p>
-						<a className="text-blue-500" href={project.githubUrl}>
-							GitHub
-						</a>
-					</div>
+					<Card key={project.$id} className="project-card">
+						<CardHeader>
+							<h3 className="text-xl font-bold">{project.name}</h3>
+						</CardHeader>
+						<CardBody>
+							<p>{project.description}</p>
+						</CardBody>
+						<CardFooter className="flex justify-end">
+							<Button as="a" color="primary" href={project.githubUrl} size="sm">
+								GitHub
+							</Button>
+						</CardFooter>
+					</Card>
 				))}
 			</div>
 		</div>
