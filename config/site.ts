@@ -13,10 +13,10 @@ const routes = {
 export const siteConfig = {
 	name: "Versionary",
 	prodDomain: "https://kdnsite.xyz",
-	title_p1: "/",
-	title_p2: "config",
-	title_p3: "/site.ts",
-	description: "Beautiful, fast, and modern. Everything you need.",
+	title_p1: "Kaiden",
+	title_p2: "Smith's",
+	title_p3: "Projects",
+	description: "Beautiful, fast, and modern.",
 	routes,
 	navItems: [
 		{
