@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { AppwriteException } from "appwrite";
 
+import { siteConfig } from "@/config/site";
+import { fetchProjects } from "@/components/fetchProjects";
 import { databases, account, ID, Permission, Role } from "@/config/appwrite";
 
 type Project = {
@@ -22,41 +24,16 @@ const AdminPanel = () => {
 	const [error, setError] = useState<string | null>(null);
 	const router = useRouter();
 
-	const fetchProjects = async () => {
-		setLoading(true);
-		setError(null);
-		try {
-			const response = await databases.listDocuments(
-				process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID as string,
-				process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID as string,
-			);
-
-			const projects = response.documents.map((doc: any) => ({
-				$id: doc.$id,
-				name: doc.name,
-				description: doc.description,
-				githubUrl: doc.githubUrl,
-			}));
-
-			setProjects(projects);
-		} catch (error) {
-			const appwriteError = error as AppwriteException;
-
-			if (appwriteError.code === 401) {
-				router.push("/login");
-			} else {
-				setError("Failed to fetch projects.");
-			}
-		} finally {
-			setLoading(false);
-		}
-	};
-
 	useEffect(() => {
 		const checkUser = async () => {
 			try {
-				await account.get();
-				await fetchProjects();
+				const user = await account.get();
+
+				if (!user.emailVerification) {
+					router.push(siteConfig.routes.verify);
+				} else {
+					await fetchProjects(setProjects, setLoading, setError, router);
+				}
 			} catch (error) {
 				router.push("/login");
 			}
@@ -83,7 +60,7 @@ const AdminPanel = () => {
 				],
 			);
 			setNewProject({ name: "", description: "", githubUrl: "" });
-			await fetchProjects();
+			await fetchProjects(setProjects, setLoading, setError, router);
 		} catch (error) {
 			const appwriteError = error as AppwriteException;
 

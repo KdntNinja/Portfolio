@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { account } from "@/config/appwrite";
-import { siteConfig } from "@/config/site";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import { Spinner } from "@nextui-org/spinner";
+
+import { account } from "@/config/appwrite";
+import { siteConfig } from "@/config/site";
 
 const VerifyPage = () => {
 	const [message, setMessage] = useState("Verifying...");
@@ -21,6 +22,7 @@ const VerifyPage = () => {
 				.updateVerification(userId, secret)
 				.then(async () => {
 					const userData = await account.get();
+
 					if (userData.emailVerification) {
 						setMessage(
 							"Email verified successfully! Redirecting to dashboard...",
@@ -51,11 +53,13 @@ const VerifyPage = () => {
 		<div className="flex flex-col items-center justify-start min-h-screen">
 			<Card className="w-full max-w-md shadow-lg mx-auto mt-8">
 				<CardHeader className="bg-gradient-to-r from-blue-500 to-green-500 text-white p-4 rounded-t-lg text-2xl font-bold text-center">
-					<h1 className="text-2xl font-bold text-center">Email Verification</h1>
+					<h1 className="text-2xl font-bold text-center">
+						Email Verification (Check your email)
+					</h1>
 				</CardHeader>
 				<CardBody className="flex items-center justify-center p-6 text-center">
 					{loading ? (
-						<Spinner size="lg" className="mb-4" />
+						<Spinner className="mb-4" size="lg" />
 					) : (
 						<p className="text-lg">{message}</p>
 					)}

@@ -42,20 +42,17 @@ const SignupPage = () => {
 		setError(null);
 
 		try {
-			const response = await account.create(
+			await account.create(
 				ID.unique(),
 				values.email,
 				values.password,
 				values.name,
 			);
-
 			await login(values.email, values.password);
-
-			const verificationResponse = await account.createVerification(
+			await account.createVerification(
 				`${siteConfig.prodDomain}${siteConfig.routes.verify}`,
 			);
-
-			router.push(siteConfig.routes.dashboard);
+			router.push(siteConfig.routes.verify);
 		} catch (error: any) {
 			error("Registration failed:", error);
 
